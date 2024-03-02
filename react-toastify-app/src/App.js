@@ -11,9 +11,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* Add more routes here if needed */}
       </Routes>
-      <ToastContainer /> {/* Place ToastContainer outside of routes */}
+      <ToastContainer />
     </div>
   );
 }

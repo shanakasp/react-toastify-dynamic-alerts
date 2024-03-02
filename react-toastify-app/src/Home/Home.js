@@ -25,7 +25,7 @@ const Home = () => {
     setType("error");
   };
 
-  // Add a useEffect hook to reset the message, type, and alertTitle states
+  // useEffect hook to reset the message, type, and alertTitle states
   React.useEffect(() => {
     setMessage("");
     setType("");
