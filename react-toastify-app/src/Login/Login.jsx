@@ -8,7 +8,7 @@ const Login = () => {
   const [type, setType] = React.useState("");
 
   const handleClick = () => {
-    setAlertTitle("User Login");
+    setAlertTitle("User login");
     setMessage("User Login successfully.");
     setType("success");
   };
