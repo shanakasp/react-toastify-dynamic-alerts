@@ -7,16 +7,24 @@ const Toast = ({ title, message, type }) => {
     if (message && type) {
       switch (type) {
         case "success":
-          toast.success(<ToastContent title={title} message={message} />);
+          toast.success(<ToastContent title={title} message={message} />, {
+            autoClose: 3000,
+          });
           break;
         case "warning":
-          toast.warning(<ToastContent title={title} message={message} />);
+          toast.warning(<ToastContent title={title} message={message} />, {
+            autoClose: 3000,
+          });
           break;
         case "error":
-          toast.error(<ToastContent title={title} message={message} />);
+          toast.error(<ToastContent title={title} message={message} />, {
+            autoClose: 3000,
+          });
           break;
         default:
-          toast(<ToastContent title={title} message={message} />);
+          toast(<ToastContent title={title} message={message} />, {
+            autoClose: 3000,
+          });
       }
     }
   }, [title, message, type]);
