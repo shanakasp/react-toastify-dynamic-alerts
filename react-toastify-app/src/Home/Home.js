@@ -1,3 +1,4 @@
+import Button from "@mui/material/Button";
 import React from "react";
 import Toast from "../toast/Toast";
 
@@ -32,11 +33,32 @@ const Home = () => {
   }, [message, type, alertTitle]);
 
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <Toast title={alertTitle} message={message} type={type} />
-      <button onClick={handleClick1}>Success</button>
-      <button onClick={handleClick2}>Warning</button>
-      <button onClick={handleClick3}>Error</button>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleClick1}
+        style={{ margin: "10px" }}
+      >
+        Success
+      </Button>
+      <Button
+        variant="contained"
+        color="warning"
+        onClick={handleClick2}
+        style={{ margin: "10px" }}
+      >
+        Warning
+      </Button>
+      <Button
+        variant="contained"
+        color="error"
+        onClick={handleClick3}
+        style={{ margin: "10px" }}
+      >
+        Error
+      </Button>
     </div>
   );
 };
