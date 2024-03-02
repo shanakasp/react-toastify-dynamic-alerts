@@ -2,33 +2,38 @@ import React from "react";
 import Toast from "../toast/Toast";
 
 const Home = () => {
+  const [alertTitle, setAlertTitle] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [type, setType] = React.useState("");
 
   const handleClick1 = () => {
-    setMessage("This is a success message!");
+    setAlertTitle("User Profile");
+    setMessage("User created successfully.");
     setType("success");
   };
 
   const handleClick2 = () => {
-    setMessage("This is a warn message!");
-    setType("warn");
+    setAlertTitle("Warning");
+    setMessage("This is a warning message!");
+    setType("warning");
   };
 
   const handleClick3 = () => {
-    setMessage("This is a error message!");
+    setAlertTitle("Error");
+    setMessage("This is an error message!");
     setType("error");
   };
 
-  // Add a useEffect hook to reset the message and type states
+  // Add a useEffect hook to reset the message, type, and alertTitle states
   React.useEffect(() => {
     setMessage("");
     setType("");
-  }, [message, type]);
+    setAlertTitle("");
+  }, [message, type, alertTitle]);
 
   return (
     <div>
-      <Toast message={message} type={type} />
+      <Toast title={alertTitle} message={message} type={type} />
       <button onClick={handleClick1}>Success</button>
       <button onClick={handleClick2}>Warning</button>
       <button onClick={handleClick3}>Error</button>
