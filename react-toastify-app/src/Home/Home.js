@@ -1,11 +1,29 @@
-import Button from "@mui/material/Button";
+import { Button } from "@mui/material";
+import { useFormik } from "formik";
 import React from "react";
+import Form from "../forms/Form";
 import Toast from "../toast/Toast";
+
+const initialValues = {
+  // Define initial form values here
+  // Example:
+  // Status: "",
+  // OtherField: ""
+};
 
 const Home = () => {
   const [alertTitle, setAlertTitle] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [type, setType] = React.useState("");
+
+  const formik = useFormik({
+    initialValues,
+    onSubmit: (values) => {
+      // Handle form submission here
+      console.log("Form values:", values);
+      // You can trigger your success/error messages here
+    },
+  });
 
   const handleClick1 = () => {
     setAlertTitle("User Profile");
@@ -59,6 +77,7 @@ const Home = () => {
       >
         Error
       </Button>
+      <Form></Form>
     </div>
   );
 };
